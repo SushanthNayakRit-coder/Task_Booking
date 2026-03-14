@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(~{::section})}">
+<head></head>
+<body>
+<section th:fragment="section">
+    <h1>Tasks</h1>
+    <div class="toolbar">
+        <div class="filters">
+            <label>Status</label>
+            <select id="filterStatus">
+                <option value="">All</option>
+                <option value="PENDING">Pending</option>
+                <option value="APPROVED">Approved</option>
+                <option value="REJECTED">Rejected</option>
+            </select>
+            <label>Sort by</label>
+            <select id="sortBy">
+                <option value="date">Date</option>
+                <option value="priority">Priority</option>
+            </select>
+            <button type="button" id="applyFilters">Apply</button>
+        </div>
+        <a th:href="@{/api/tasks/export}" class="btn btn-secondary" id="exportBtn">Export CSV</a>
+    </div>
+    <div id="taskList">Loading...</div>
+</section>
+</body>
+</html>

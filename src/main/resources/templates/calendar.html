@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(~{::section})}">
+<head></head>
+<body>
+<section th:fragment="section">
+    <h1>Calendar View</h1>
+    <div class="calendar-toolbar">
+        <button type="button" id="prevMonth">&larr; Previous</button>
+        <h2 id="calendarTitle">Month Year</h2>
+        <button type="button" id="nextMonth">Next &rarr;</button>
+    </div>
+    <div id="calendarGrid" class="calendar-grid"></div>
+    <div id="calendarTasks" class="calendar-tasks-list"></div>
+</section>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:fragment="layout(content)">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Task Booking</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body>
+<nav class="navbar">
+    <a th:href="@{/dashboard}" class="brand">Task Booking</a>
+    <div class="nav-links">
+        <a th:href="@{/dashboard}">Dashboard</a>
+        <a th:href="@{/tasks}">Tasks</a>
+        <a th:href="@{/tasks/new}">New Task</a>
+        <a th:href="@{/calendar}">Calendar</a>
+        <span class="user-info" id="userInfo"></span>
+        <form th:action="@{/logout}" method="post" class="logout-form">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+</nav>
+<main class="container">
+    <div th:replace="${content}"></div>
+</main>
+<script th:src="@{/js/app.js}"></script>
+</body>
+</html>

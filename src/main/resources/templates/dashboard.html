@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="~{layout :: layout(~{::section})}">
+<head></head>
+<body>
+<section th:fragment="section">
+    <h1>Dashboard</h1>
+    <div class="dashboard-cards">
+        <div class="card">
+            <h2>Pending</h2>
+            <p class="count" id="pendingCount">-</p>
+            <a th:href="@{/tasks(status='PENDING')}">View pending</a>
+        </div>
+        <div class="card">
+            <h2>Approved</h2>
+            <p class="count" id="approvedCount">-</p>
+            <a th:href="@{/tasks(status='APPROVED')}">View approved</a>
+        </div>
+        <div class="card">
+            <h2>Rejected</h2>
+            <p class="count" id="rejectedCount">-</p>
+            <a th:href="@{/tasks(status='REJECTED')}">View rejected</a>
+        </div>
+    </div>
+    <section class="recent-section">
+        <h2>Recent tasks</h2>
+        <div id="recentTasks">Loading...</div>
+    </section>
+</section>
+</body>
+</html>

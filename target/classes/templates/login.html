@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Login - Task Booking</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+</head>
+<body class="login-page">
+<main class="login-container">
+    <h1>Task Booking</h1>
+    <p class="subtitle">Sign in to manage tasks and bookings</p>
+    <div th:if="${param.logout}" class="alert alert-success">You have been logged out.</div>
+    <div th:if="${param.error}" class="alert alert-error">Invalid username or password.</div>
+    <form th:action="@{/login}" method="post" class="login-form">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" required autofocus/>
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required/>
+        <button type="submit">Sign in</button>
+    </form>
+    <p class="hint">Demo: admin/admin, manager/manager, user/user</p>
+</main>
+</body>
+</html>
